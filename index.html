@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -13,9 +11,14 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/f38c77de34.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
+    <!-- header -->
     <header>
       <div class="section">
         <div class="row">
@@ -26,11 +29,40 @@
       </div>
     </header>
 
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
+    <!-- form -->
+    <div class="section">
+      <div class="row">
+        <div class="col-md-4">
+          <form class="searchForm float-left">
+            <input
+              class="searchBar"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button type="submit" class="searchBtn">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- current weather of the day -->
+      <div class="row">
+        <div class="col-md-8">
+          <div class="currentWeather float-right">current</div>
+        </div>
+      </div>
+
+      <!-- five day forecast -->
+      <div class="row">
+        <div class="col-md-8">
+          <div class="forecast float-right">forecast</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

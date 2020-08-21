@@ -4,3 +4,19 @@ header {
   color: white;
   padding: 15px;
 }
+
+.currentWeather {
+  background-color: red;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.forecast {
+  background-color: red;
+}
+/* .searchForm {
+  float: left;
+} */
+.searchBtn {
+  border: 1px solid black;
+  /* color: #4dd0e1; */
+}
