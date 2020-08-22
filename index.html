@@ -32,8 +32,8 @@
     <!-- form -->
     <div class="section">
       <div class="row">
-        <div class="col-md-4">
-          <form class="searchForm float-left">
+        <div class="col-md-4 box searchBox">
+          <form class="searchForm"> 
             <input
               class="searchBar"
               type="text"
@@ -45,19 +45,58 @@
             </button>
           </form>
         </div>
-      </div>
 
       <!-- current weather of the day -->
-      <div class="row">
-        <div class="col-md-8">
-          <div class="currentWeather float-right">current</div>
+        <div class="col-md-8 offset-md-4 box float-right">
+           <div class="currentWeather">city(date)
+             <br>
+             Temperature:
+             <br>
+             Humidity:
+             <br>
+             Wind Speed:
+             <br>
+             UV Index:
+           </div> 
         </div>
       </div>
 
       <!-- five day forecast -->
       <div class="row">
-        <div class="col-md-8">
-          <div class="forecast float-right">forecast</div>
+        <div class="col-md-8 offset-md-4 box float-right">
+          <div class="forecast">
+            <div class="card dayOne" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card dayTwo" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card dayThree" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card dayFour" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+            <div class="card dayFive" style="width: 15rem;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
