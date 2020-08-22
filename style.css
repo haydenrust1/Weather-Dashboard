@@ -5,33 +5,42 @@ header {
   padding: 15px;
 }
 
-.currentWeather {
-  /* border-color: 1px solid red;
+.secondRow {
   margin-top: 10px;
-  margin-bottom: 10px; */
 }
-.forecast {
-  display: flex;
-}
+
+/* Search Container */
 .searchBox {
   /* border-color: 1px solid red; */
 }
-
-
-.searchForm{
-  height:100px; 
-
+.searchForm {
+  /* height: 500px; */
 }
-
 .searchBtn {
-  border: 1px solid black;
-  /* color: #4dd0e1; */
+  color: #4dd0e1;
+  background-color: white;
 }
-
-.searchBar{
+.searchBar {
   width: 25vw;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.searchBar:focus {
+  outline: none;
 }
 
-.box {
-  border: 1px solid red;
+.currentWeather {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid lightgray;
 }
+
+.forecast {
+  margin: 10px;
+  border: 1px solid lightgray;
+  display: flex;
+}
+
+/* .box {
+  border: 1px solid red;
+} */
