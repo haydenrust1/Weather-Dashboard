@@ -51,7 +51,7 @@ $(document).ready(function () {
         currentDisplay.append(windSpeed);
 
         /*TESTING*/
-        // console.log(response.main.temp);
+        // console.log(response);
       });
 
       // // 5-day forecast call
@@ -81,29 +81,36 @@ $(document).ready(function () {
           '&units=imperial&appid=f462ebfd8a4c3783712546f3bca5bd3c',
         method: 'GET',
       }).then(function (response) {
+        console.log(response);
+
+        var uv = $('<p>').text('UV Index: ' + response.daily[0].uvi);
+        currentDisplay.append(uv);
+
         for (var i = 1; i < response.daily.length - 2; i++) {
           var day = moment.unix(response.daily[i].dt).format('Do');
 
           var timeAndPlace = $('<p>').text(
             `${response.name} (${moment().subtract(10, 'days').calendar()})`
           );
-          var temperature = $('<p>').text(
-            'Temperature: ' + response.main.temp + ' °F'
+          var tempHigh = $('<p>').text(
+            'High: ' + response.daily[i].temp.max + ' °F'
           );
+          var tempLow = $('<p>').text(
+            'High: ' + response.daily[i].temp.min + ' °F'
+          );
+
           var humid = $('<p>').text(
-            'Humidity: ' + response.main.humidity + '%'
+            'Humidity: ' + response.daily[i].humidity + '%'
           );
           forecastDisplay.append(timeAndPlace);
-          forecastDisplay.append(temperature);
+          forecastDisplay.append(tempHigh);
+          forecastDisplay.append(tempLow);
           forecastDisplay.append(humid);
 
           console.log(day);
         }
-        console.log(response);
         // console.log(day);
         // 1. UV data
-        var uv = $('<p>').text('UV Index: ' + response.value);
-        currentDisplay.append(uv);
 
         // 2. Five day forecast
 
