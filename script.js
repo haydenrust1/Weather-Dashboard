@@ -6,7 +6,7 @@ $(document).ready(function () {
   var usersQuery = $('.searchBar');
   var searchButton = $('.searchBtn');
   var currentDisplay = $('.currentWeather');
-  var forecastDisplay = $('.forecast');
+  var citySearched = $('.citySearchedBox');
 
   //vars
   var lattitude;
@@ -83,43 +83,37 @@ $(document).ready(function () {
       }).then(function (response) {
         console.log(response);
 
+        //display current day UV Index
         var uv = $('<p>').text('UV Index: ' + response.daily[0].uvi);
         currentDisplay.append(uv);
 
-        for (var i = 1; i < response.daily.length - 2; i++) {
-          var day = moment.unix(response.daily[i].dt).format('Do');
+        //display date, High/Low temp, humidity for 5 day forecast
+        for (var i = 0; i < response.daily.length - 2; i++) {
+          var day = moment.unix(response.daily[i].dt);
+          var tempHigh = 'High: ' + response.daily[i].temp.max + ' °F';
+          var tempLow = 'Low: ' + response.daily[i].temp.min + ' °F';
+          var humid = 'Humidity: ' + response.daily[i].humidity + '%';
 
-          var timeAndPlace = $('<p>').text(
-            `${response.name} (${moment().subtract(10, 'days').calendar()})`
-          );
-          var tempHigh = $('<p>').text(
-            'High: ' + response.daily[i].temp.max + ' °F'
-          );
-          var tempLow = $('<p>').text(
-            'High: ' + response.daily[i].temp.min + ' °F'
-          );
-
-          var humid = $('<p>').text(
-            'Humidity: ' + response.daily[i].humidity + '%'
-          );
-          forecastDisplay.append(timeAndPlace);
-          forecastDisplay.append(tempHigh);
-          forecastDisplay.append(tempLow);
-          forecastDisplay.append(humid);
-
-          console.log(day);
+          $('.date').eq(i).text(day);
+          // $('.img').eq(i).append();
+          $('.tempHigh').eq(i).text(tempHigh);
+          $('.tempLow').eq(i).text(tempLow);
+          $('.humidity').eq(i).text(humid);
         }
-        // console.log(day);
-        // 1. UV data
-
-        // 2. Five day forecast
-
-        /*TESTING*/
-        // console.log(response);
-        // console.log(response.list[0].main.temp);
       });
     };
 
     //  populate city searched
+    localStorage.setItem('citySearch', usersInput);
+
+    var getLocalStorage = localStorage.getItem('citySearch');
+    var cityBox = $('<div></div>');
+    var p = $('<p>').text(getLocalStorage);
+
+    cityBox.append(p);
+    citySearched.append(cityBox);
+
+    // citySearched.add('div').text(getLocalStorage);
   });
+  console.log(getLocalStorage);
 });
